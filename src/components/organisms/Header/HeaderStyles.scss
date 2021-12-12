@@ -2,7 +2,7 @@ $mediaMobile: 1024px;
 $heightHeader: 500px;
 
 @mixin header {
-  position: absolute;
+  // position: absolute;
   background-color: #75bc97;
   display: flex;
   justify-content: space-between;

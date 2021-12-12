@@ -14,7 +14,7 @@ const App = () => {
   document.body.append(Header()); 
   document.body.append(HeaderMobile());
   //      [FIM] HEADER
-
+  App.append(BoardSelect())
 
   return App;
 };
