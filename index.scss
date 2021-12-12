@@ -1,63 +1,127 @@
+$mediaMobile: 1024px;
 $heightHeader: 500px;
 
 body {
-    margin: 0;
-    font-family: "Montserrat", sans-serif;
-    background-color: green;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: green;
 }
 
 .header {
-    position: absolute;
-    background-color:#75BC97;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: $heightHeader;
+  position: absolute;
+  background-color: #75bc97;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: $heightHeader;
+}
+
+.header-mobile {
+ @extend .header;
+ flex-direction: column;
+ height: 590px;
 }
 
 .left-leaves {
-    position: absolute;
-    width: 60.5%;
-    height: $heightHeader;
+  position: absolute;
+  width: 60.5%;
+  height: $heightHeader;
+}
+
+.mobile-leaves {
+ width: 100%;
+ height: 70%;
+ position: initial;
+ z-index: 1;
 }
 
 .logo-white {
-    position: absolute;
-    top: 57px;
-    left: 18%;
-   
+  position: absolute;
+  top: 57px;
+  left: 18%;
+
+  @media screen and (max-width: 1300px) {
+    left: 16.5%;
+  }
+}
+
+.mobile-logo-white {
+ @extend .logo-white;
+ z-index: 1;
+ top: 39px;
+
 }
 
 .descriptionHeader {
-    position: absolute;
-    left: 18%;
-    font-family: Montserrat;
-    font-weight: bold;
-    color: #FFFFFF;
-    font-size: 70px;
-    line-height: 85px;
-    width: 400px;
+  position: absolute;
+  left: 18%;
+  font-family: Montserrat;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 70px;
+  line-height: 85px;
+  width: 400px;
+
+ 
+
+  @media screen and (max-width: 1300px) {
+    left: 16.5%;
+    font-size: 60px;
+  }
+
+  // @media screen and (max-width: $mediaMobile) {
+  //     font-size: 60px;
+  //   }
+}
+
+.mobile-descriptionHeader {
+  @extend .descriptionHeader;
+  font-size: 40px;
+  line-height: 49px;
+  z-index: 1;
+  top: 40px;
+
+  width: auto;
+  padding-right: 20px;
 }
 
 .arrow-down {
-    position: absolute;
-    top: 407px;
-    left: 18%; 
+  position: absolute;
+  top: 407px;
+  left: 18%;
+  z-index: 1;
+
+  @media screen and (max-width: 1300px) {
+    left: 16.5%;
+  }
+}
+
+.mobile-arrow-down {
+  @extend .arrow-down;
+  top: 240px;
+ 
 }
 
 .plantperson {
-    position: absolute;
-    left: 56.2%;
-    width: 23.9%;
-    max-width: 335px;
-    max-height: 425px;
- 
+  position: absolute;
+  left: 56.2%;
+  width: 23.9%;
+  max-width: 335px;
+  max-height: 425px;
 }
+
+.mobile-plantperson {
+  width: 88%;
+  height: 40%;
+  position: relative;
+  bottom: 75px; 
+}
+
 .right-leaves {
-    position: absolute;
-    right: 0;
-    width: 23%;
-    max-width: 361px;
-    height: $heightHeader;
+  position: absolute;
+  right: 0;
+  width: 23%;
+  max-width: 361px;
+  height: $heightHeader;
 }

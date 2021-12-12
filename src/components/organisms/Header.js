@@ -2,24 +2,27 @@ import ImageGlobal from "../../helpers/ImageGlobal";
 import Img from "../atoms/Img";
 
 const Header = () => {
-  var altura = window.screen.height;
-  var largura = window.screen.width;
-  console.log(altura);
-  console.log(largura);
-  //  ${Img("arrow-down", require("../../../images/hero//desktop/right-leaves.png"))}
-  return `
-  <header class="header">   
-    <img class="left-leaves" src=${ImageGlobal.leftLeaves}></img>
-
-      <img class="logo-white" src=${ImageGlobal.logoWhite}></img>
-      <p class="descriptionHeader">Find your next green friend</p>
-      <img class="arrow-down" src=${ImageGlobal.arrowDown}></img>
-
-      <img class="plantperson" src=${ImageGlobal.plantPerson}></img>
-
-      <img class="right-leaves" src=${ImageGlobal.rightLeaves}></img>
-     
-    </header>`;
+  
+  const windowWidth = window.screen.width;
+  
+  return windowWidth > 800
+    ? `
+  <header class="header">    
+    ${Img("left-leaves", ImageGlobal.leftLeaves)}  
+    ${Img("logo-white", ImageGlobal.logoWhite)}       
+    <p class="descriptionHeader">Find your next green friend</p>
+    ${Img("arrow-down", ImageGlobal.arrowDown)}    
+    ${Img("plantperson", ImageGlobal.plantPerson)}
+    ${Img("right-leaves", ImageGlobal.rightLeaves)}
+  </header>`
+    :  `<header class="header-mobile">    
+    ${Img("mobile-leaves", ImageGlobal.mobileLeaves)}  
+    ${Img("mobile-logo-white", ImageGlobal.mobileLogoWhite)}       
+    <p class="mobile-descriptionHeader">Find your next green friend</p>
+    ${Img("mobile-arrow-down", ImageGlobal.arrowDown)}    
+    ${Img("mobile-plantperson", ImageGlobal.mobilePlantPerson)}
+   
+  </header>`
 };
 
 export default Header;
