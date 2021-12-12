@@ -1,9 +1,7 @@
 export default () => {
-    const BoardSelect = document.createElement("section");
-  
-    BoardSelect.classList.add("boardSelect");
+  const BoardSelect = document.createElement("section");
 
-  
-    return BoardSelect;
-  };
-  
+  BoardSelect.classList.add("boardSelect");
+
+  return BoardSelect;
+};
