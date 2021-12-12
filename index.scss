@@ -44,6 +44,10 @@ body {
   @media screen and (max-width: 1300px) {
     left: 16.5%;
   }
+
+  @media screen and (max-width: 1100px) {
+    left: 13.5%;
+  }
 }
 
 .mobile-logo-white {
@@ -61,13 +65,21 @@ body {
   color: #ffffff;
   font-size: 70px;
   line-height: 85px;
-  width: 400px;
-
- 
+  width: 400px; 
 
   @media screen and (max-width: 1300px) {
     left: 16.5%;
     font-size: 60px;
+    width: 350px;
+  }
+
+  @media screen and (max-width: 1100px) {
+    left: 13.5%;
+  }
+
+  @media screen and (max-width: 900px) {
+     font-size: 50px;
+     line-height: 75px;
   }
 
   // @media screen and (max-width: $mediaMobile) {
@@ -82,7 +94,7 @@ body {
   z-index: 1;
   top: 40px;
 
-  width: auto;
+  width: 250px;
   padding-right: 20px;
 }
 
@@ -94,6 +106,10 @@ body {
 
   @media screen and (max-width: 1300px) {
     left: 16.5%;
+  }
+
+  @media screen and (max-width: 1100px) {
+    left: 13.5%;
   }
 }
 
@@ -116,6 +132,10 @@ body {
   height: 40%;
   position: relative;
   bottom: 75px; 
+
+  @media screen and (max-width: 300px) {
+    bottom: 30px; 
+  }
 }
 
 .right-leaves {

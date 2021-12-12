@@ -1,14 +1,12 @@
 import Header from "./components/organisms/Header";
 
 const App = () => {
+  const App = document.createElement("main");
 
-  return( `
+  App.setAttribute("class", "App");
+  document.body.append(Header());
 
-       ${Header()}
-      
-    
-    `)
+  return App;
 };
 
 export default App;
-

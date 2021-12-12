@@ -1,28 +1,39 @@
 import ImageGlobal from "../../helpers/ImageGlobal";
 import Img from "../atoms/Img";
+import Text from "../atoms/Text";
 
-const Header = () => {
-  
+export default () => {
   const windowWidth = window.screen.width;
-  
-  return windowWidth > 800
-    ? `
-  <header class="header">    
-    ${Img("left-leaves", ImageGlobal.leftLeaves)}  
-    ${Img("logo-white", ImageGlobal.logoWhite)}       
-    <p class="descriptionHeader">Find your next green friend</p>
-    ${Img("arrow-down", ImageGlobal.arrowDown)}    
-    ${Img("plantperson", ImageGlobal.plantPerson)}
-    ${Img("right-leaves", ImageGlobal.rightLeaves)}
-  </header>`
-    :  `<header class="header-mobile">    
-    ${Img("mobile-leaves", ImageGlobal.mobileLeaves)}  
-    ${Img("mobile-logo-white", ImageGlobal.mobileLogoWhite)}       
-    <p class="mobile-descriptionHeader">Find your next green friend</p>
-    ${Img("mobile-arrow-down", ImageGlobal.arrowDown)}    
-    ${Img("mobile-plantperson", ImageGlobal.mobilePlantPerson)}
-   
-  </header>`
-};
+  const Header = document.createElement("header");
 
-export default Header;
+  const componentsHeader = [
+    Img("left-leaves", ImageGlobal.leftLeaves),
+    Img("logo-white", ImageGlobal.logoWhite),
+    Text("descriptionHeader", "Find your next green friend"),
+    Img("arrow-down", ImageGlobal.arrowDown),
+    Img("plantperson", ImageGlobal.plantPerson),
+    Img("right-leaves", ImageGlobal.rightLeaves),
+  ];
+
+  const componentsHeaderMobile = [
+    Img("mobile-leaves", ImageGlobal.mobileLeaves),
+    Img("mobile-logo-white", ImageGlobal.mobileLogoWhite),
+    Text("mobile-descriptionHeader", "Find your next green friend"),
+    Img("mobile-arrow-down", ImageGlobal.arrowDown),
+    Img("mobile-plantperson", ImageGlobal.mobilePlantPerson),
+  ];
+
+  if (windowWidth > 800) {
+    if (Header.classList.contains("header-mobile"))
+      Header.classList.remove("header-mobile");
+    if (!Header.classList.contains("header")) Header.classList.add("header");
+    componentsHeader.map((comp) => Header.append(comp));
+  } else {
+    if (Header.classList.contains("header")) Header.classList.remove("header");
+    if (!Header.classList.contains("header-mobile"))
+      Header.classList.add("header-mobile");
+    componentsHeaderMobile.map((comp) => Header.append(comp));
+  }
+
+  return Header;
+};

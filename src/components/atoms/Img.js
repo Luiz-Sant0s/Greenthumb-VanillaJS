@@ -1,5 +1,9 @@
-const Img = (clas, src, alt) => {
-  return `<img class=${clas} src=${src} alt=${alt}> </img>`;
-};
+export default (clas, src, alt) => {
+  const Img = document.createElement("img");
 
-export default Img;
+  Img.classList.add(clas);
+  Img.setAttribute("src", src);
+  Img.setAttribute("alt", alt);
+
+  return Img;
+};
