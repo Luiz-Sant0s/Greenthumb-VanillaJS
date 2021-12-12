@@ -1,5 +1,5 @@
-import Header from "./components/organisms/Header";
-import HeaderMobile from "./components/organisms/HeaderMobile";
+import Header from "./components/organisms/Header/Header";
+import HeaderMobile from "./components/organisms/Header/HeaderMobile";
 
 const App = () => {
   const App = document.createElement("main");
