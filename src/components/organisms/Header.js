@@ -3,7 +3,6 @@ import Img from "../atoms/Img";
 import Text from "../atoms/Text";
 
 export default () => {
-  const windowWidth = window.screen.width;
   const Header = document.createElement("header");
 
   const componentsHeader = [
@@ -15,25 +14,8 @@ export default () => {
     Img("right-leaves", ImageGlobal.rightLeaves),
   ];
 
-  const componentsHeaderMobile = [
-    Img("mobile-leaves", ImageGlobal.mobileLeaves),
-    Img("mobile-logo-white", ImageGlobal.mobileLogoWhite),
-    Text("mobile-descriptionHeader", "Find your next green friend"),
-    Img("mobile-arrow-down", ImageGlobal.arrowDown),
-    Img("mobile-plantperson", ImageGlobal.mobilePlantPerson),
-  ];
-
-  if (windowWidth > 800) {
-    if (Header.classList.contains("header-mobile"))
-      Header.classList.remove("header-mobile");
-    if (!Header.classList.contains("header")) Header.classList.add("header");
-    componentsHeader.map((comp) => Header.append(comp));
-  } else {
-    if (Header.classList.contains("header")) Header.classList.remove("header");
-    if (!Header.classList.contains("header-mobile"))
-      Header.classList.add("header-mobile");
-    componentsHeaderMobile.map((comp) => Header.append(comp));
-  }
+  Header.classList.add("header");
+  componentsHeader.map((comp) => Header.append(comp));
 
   return Header;
 };
