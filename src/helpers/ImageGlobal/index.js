@@ -11,7 +11,10 @@ const ImageGlobal = {
     mobileLogoWhite: require("../../../images/icons/mobile-logo-white.svg"),
     mobilePlantPerson: require("../../../images/hero/mobile/mobile-plantperson.png"),
 
-   
+    // CARDSELECT
+    iconSun: require("../../../images/illustrations/sun.png"),
+    iconWater: require("../../../images/illustrations/wateringcan.png"),
+    iconChew: require("../../../images/illustrations/dog.png"),
 
     
 }

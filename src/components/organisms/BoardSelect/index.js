@@ -1,20 +1,29 @@
+import ImageGlobal from '../../../helpers/ImageGlobal';
+import Img from '../../atoms/Img';
+import NewElement from '../../atoms/NewElement';
+
 export default () => {
-  const BoardSelect = document.createElement("section");
-  BoardSelect.classList.add("boardSelect");
+  const BoardSelect = NewElement("board-select", "", "section");
 
-  const CardSelect = document.createElement("aside");
-  CardSelect.classList.add("cardSelect");
+  const CardSun = NewElement("card-select", "", "aside");  
+  const TextCardSun = NewElement("text-card-sun", "", "p")
+  TextCardSun.append(NewElement("text-bold", "1. ", "span") , "Set the amount of", NewElement("text-bold", " sunlight ", "span"),  "your plant will get.");  
+  CardSun.append(Img("icon-card-select", ImageGlobal.iconSun, "icon Sun"));
+  CardSun.append(TextCardSun);
+ 
 
-  const CardSelect2 = document.createElement("aside");
-  CardSelect2.classList.add("cardSelect");
 
-  const CardSelect3 = document.createElement("aside");
-  CardSelect3.classList.add("cardSelect")
+  const CardWater = NewElement("card-select", "", "aside"); 
+  CardWater.append(Img("icon-card-select", ImageGlobal.iconWater,"icon Water"));
+
+
+  const CardDog = NewElement("card-select", "", "aside");
+  CardDog.append(Img("icon-card-select", ImageGlobal.iconChew,"icon Chew"));
+ 
 
 
   
-BoardSelect.append(CardSelect);
-BoardSelect.append(CardSelect2);
-BoardSelect.append(CardSelect3);
+BoardSelect.append(CardSun, CardWater, CardDog);
+
   return BoardSelect;
 };

@@ -1,24 +1,29 @@
 import ImageGlobal from "../../../helpers/ImageGlobal";
 import Img from "../../atoms/Img";
-import TextHeader from "../../atoms/TextHeader";
+import NewElement from "../../atoms/NewElement";
 
 export default () => {
   const windowWidth = window.screen.width;
   const Header = document.createElement("header");
 
   const componentsHeader = [
-    Img("left-leaves", ImageGlobal.leftLeaves,"left leaves"),
+    Img("left-leaves", ImageGlobal.leftLeaves, "left leaves"),
     Img("logo-white", ImageGlobal.logoWhite, "logo white"),
-    TextHeader("descriptionHeader", "Find your next green friend", "descriptionHeader"),
+    NewElement(
+      "descriptionHeader",
+      "Find your next green friend",
+      "descriptionHeader",
+      "h1"
+    ),
     Img("arrow-down", ImageGlobal.arrowDown, "arrow down"),
     Img("plantperson", ImageGlobal.plantPerson, "plant person"),
-    Img("right-leaves", ImageGlobal.rightLeaves,"right leaves" ),
+    Img("right-leaves", ImageGlobal.rightLeaves, "right leaves"),
   ];
 
   const componentsHeaderMobile = [
     Img("mobile-leaves", ImageGlobal.mobileLeaves, "leaves"),
     Img("mobile-logo-white", ImageGlobal.mobileLogoWhite, "logo white"),
-    TextHeader("mobile-descriptionHeader", "Find your next green friend"),
+    Text("mobile-descriptionHeader", "Find your next green friend", "h1"),
     Img("mobile-arrow-down", ImageGlobal.arrowDown, "arrow down"),
     Img("mobile-plantperson", ImageGlobal.mobilePlantPerson, "plant person"),
   ];

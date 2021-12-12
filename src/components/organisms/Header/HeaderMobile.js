@@ -1,6 +1,6 @@
 import ImageGlobal from "../../../helpers/ImageGlobal";
 import Img from "../../atoms/Img";
-import TextHeader from "../../atoms/TextHeader";
+import NewElement from "../../atoms/NewElement";
 
 export default () => {
   const HeaderMobile = document.createElement("header");
@@ -8,7 +8,7 @@ export default () => {
   const componentsHeaderMobile = [
     Img("mobile-leaves", ImageGlobal.mobileLeaves, "leaves"),
     Img("mobile-logo-white", ImageGlobal.mobileLogoWhite, "logo white"),
-    TextHeader("mobile-descriptionHeader", "Find your next green friend"),
+    NewElement("mobile-descriptionHeader", "Find your next green friend", "h1"),
     Img("mobile-arrow-down", ImageGlobal.arrowDown, "arrow down"),
     Img("mobile-plantperson", ImageGlobal.mobilePlantPerson, "plant person"),
   ];
