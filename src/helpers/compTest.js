@@ -1,5 +1,5 @@
 
-import {imagea} from './image'
+import {imagea} from './ImageGlobal'
 
 const compTest = () => {
 
