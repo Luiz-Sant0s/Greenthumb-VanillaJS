@@ -1,0 +1,63 @@
+$heightHeader: 500px;
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: green;
+}
+
+.header {
+    position: absolute;
+    background-color:#75BC97;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: $heightHeader;
+}
+
+.left-leaves {
+    position: absolute;
+    width: 60.5%;
+    height: $heightHeader;
+}
+
+.logo-white {
+    position: absolute;
+    top: 57px;
+    left: 18%;
+   
+}
+
+.descriptionHeader {
+    position: absolute;
+    left: 18%;
+    font-family: Montserrat;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 70px;
+    line-height: 85px;
+    width: 400px;
+}
+
+.arrow-down {
+    position: absolute;
+    top: 407px;
+    left: 18%; 
+}
+
+.plantperson {
+    position: absolute;
+    left: 56.2%;
+    width: 23.9%;
+    max-width: 335px;
+    max-height: 425px;
+ 
+}
+.right-leaves {
+    position: absolute;
+    right: 0;
+    width: 23%;
+    max-width: 361px;
+    height: $heightHeader;
+}
