@@ -1,6 +1,6 @@
 import ImageGlobal from "../../helpers/ImageGlobal";
 import Img from "../atoms/Img";
-import Text from "../atoms/Text";
+import TextHeader from "../atoms/TextHeader";
 
 export default () => {
   const windowWidth = window.screen.width;
@@ -9,7 +9,7 @@ export default () => {
   const componentsHeader = [
     Img("left-leaves", ImageGlobal.leftLeaves),
     Img("logo-white", ImageGlobal.logoWhite),
-    Text("descriptionHeader", "Find your next green friend"),
+    TextHeader("descriptionHeader", "Find your next green friend"),
     Img("arrow-down", ImageGlobal.arrowDown),
     Img("plantperson", ImageGlobal.plantPerson),
     Img("right-leaves", ImageGlobal.rightLeaves),
@@ -18,7 +18,7 @@ export default () => {
   const componentsHeaderMobile = [
     Img("mobile-leaves", ImageGlobal.mobileLeaves),
     Img("mobile-logo-white", ImageGlobal.mobileLogoWhite),
-    Text("mobile-descriptionHeader", "Find your next green friend"),
+    TextHeader("mobile-descriptionHeader", "Find your next green friend"),
     Img("mobile-arrow-down", ImageGlobal.arrowDown),
     Img("mobile-plantperson", ImageGlobal.mobilePlantPerson),
   ];

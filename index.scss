@@ -65,7 +65,7 @@ body {
 .mobile-logo-white {
   @extend .logo-white;
   z-index: 1;
-  top: 39px;
+  top: 36px;
 }
 
 .descriptionHeader {
@@ -94,9 +94,6 @@ body {
     width: 300px;
   };
 
-  // @media screen and (max-width: $mediaMobile) {
-  //     font-size: 60px;
-  //   }
 }
 
 .mobile-descriptionHeader {
@@ -104,7 +101,7 @@ body {
   font-size: 40px;
   line-height: 49px;
   z-index: 1;
-  top: 40px;
+  top: 60px;
 
   width: 250px;
   padding-right: 20px;
@@ -112,8 +109,8 @@ body {
 
 .arrow-down {
   position: absolute;
-  top: 407px;
-  left: 18%;
+  top: 400px;
+  left: 18.3%;
   z-index: 1;
 
   @media screen and (max-width: 1300px) {
@@ -127,7 +124,11 @@ body {
 
 .mobile-arrow-down {
   @extend .arrow-down;
-  top: 240px;
+  top: 245px;
+
+  @media screen and (max-width: 800px) {
+    left: 15.5%;
+  };
 }
 
 .plantperson {
