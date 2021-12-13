@@ -1,14 +1,21 @@
+@mixin text-no-result {
+  font-family: Montserrat;
+  font-style: normal;
+  color: #a9a9a9;
+  width: 250px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
 .box-no-results {
   background-color: #f6f6f6;
   height: 300px;
   width: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 160px;
 
-  
   @media screen and (max-width: 949px) {
     flex-direction: column;
     gap: 38px;
@@ -17,37 +24,19 @@
   };
 }
 
-.container-description {
-
-}
-
 .title-no-results {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 45px;
-  line-height: 55px;
-  color: #a9a9a9;
-  width: 250px;
-  margin: 0 auto;
+  @include text-no-result;
   margin-bottom: 15px;
-  text-align: justify;
+  line-height: 55px;
+  font-size: 45px;
+  font-weight: bold;
 }
 
 .description-no-results {
-  font-family: Montserrat;
-  font-style: normal;
+  @include text-no-result;
   font-weight: normal;
   font-size: 16px;
   line-height: 27px;
-  color: #a9a9a9;
-  width: 250px;
-  margin: 0 auto;
-  text-align: justify;
-
-  @media screen and (max-width: 949px) {
-    margin: 0 auto;
-  };
 }
 
 .container-icon {
