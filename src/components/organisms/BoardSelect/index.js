@@ -31,10 +31,10 @@ export default () => {
       // )
       //   .then((r) => r.json())
       //   .then((data) => {
-
-      //     console.log("Nome da primeira Planta.", data[0].name);
-      //     // alert(`success!  ${data}`);
-      //      alert(`Nome da primeira Planta!>>  ${data[0].name}`);
+      
+      //      console.log(`dados!  ${data}`);
+      //      alert(`Primeira Planta sugerida é!>>  ${data[0].name}`);
+      //     alert(`Segunda Planta sugerida é hehe>>, ${data[1].name}`);
 
       //   })
       //   .catch((e) => {
@@ -53,16 +53,17 @@ export default () => {
             if (response.body) {
               const data = JSON.parse(response.body);
 
-              alert(`Primeira Planta é!>>, ${data[0].name}`);
+              alert(`Primeira Planta sugerida é>>, ${data[0].name}`);
+              alert(`Segunda Planta sugerida hehe >>, ${data[1].name}`);
               console.log("............", data);
             }
           } catch {
-            alert(`Nenhuma planta encontrada =/ `);
+            alert(`Nenhuma planta encontrada =/`);
             console.log("Nenhuma planta encontrada", error);
           }
         }
       );
-      
+
     }
   };
 
