@@ -1,73 +1,85 @@
 import ImageGlobal from "../../../helpers/ImageGlobal";
 import Img from "../../atoms/Img";
 import NewElement from "../../atoms/NewElement";
+import CardSelect from "../../molecules/CardSelect";
 
 export default () => {
   const BoardSelect = NewElement("board-select", "", "section");
 
-  // [INIT] CARD SUN
-  const CardSun = NewElement("card-select", "", "aside");
-  const TextCardSun = NewElement("text-card", "", "p");
-  TextCardSun.append(
-    NewElement("text-bold", "1. ", "span"),
+  const optionsSun = ["no", "low", "high"];
+
+  const CardSun = CardSelect(
+    "sun",
+    ImageGlobal.iconSun,
+    "1. ",
     "Set the amount of",
-    NewElement("text-bold", " sunlight ", "span"),
-    "your plant will get."
+    " sunlight ",
+    "your plant will get.",
+    changeSelect,
+    optionsSun
   );
 
-  const newOption = NewElement("option-sun", "Select...", "option");
-  newOption.setAttribute("disabled", true);
-  newOption.setAttribute("selected", true);
-
-  const SelectSun = NewElement("select-sun", "", "select");
-
-  const removeFocus = () => {
-    console.log("......perdeu o foco....", SelectSun.value)
-  document.activeElement.blur();
-  document.querySelector('.arrow-select-sun').style.transform = "rotate(0deg)";
-  };
-
+  // [INIT] CARD SUN
   const changeSelect = () => {
-    removeFocus();
-    console.log("VALUE SELECT", SelectSun.value)
-  }
-
-  const arrowSelect = NewElement("arrow-select-sun", "", "div");
-
-  const selectInFocus = () => {
-  
-  arrowSelect.style.transform = "rotate(180deg)";
-
+    console.log("deuuuuuuuuuuuuuuuuu bommmmmmmm");
+    const test = document.getElementById("option-Select...");
+    console.log("............ass", test.value);
   };
+  // const CardSun = NewElement("card-select", "", "aside");
+  // const TextCardSun = NewElement("text-card", "", "p");
+  // TextCardSun.append(
+  //   NewElement("text-bold", "1. ", "span"),
+  //   "Set the amount of",
+  //   NewElement("text-bold", " sunlight ", "span"),
+  //   "your plant will get."
+  // );
 
-  SelectSun.addEventListener("focus", selectInFocus);
-   SelectSun.addEventListener("blur", removeFocus);
-   SelectSun.addEventListener("change", changeSelect);
+  // const newOption = NewElement("option-sun", "Select...", "option");
+  // newOption.setAttribute("disabled", true);
+  // newOption.setAttribute("selected", true);
 
-  const boxSelect = NewElement("box-select", "", "div");
-  
+  // const SelectSun = NewElement("select-sun", "", "select");
 
-  SelectSun.append(
-    newOption,
-    NewElement("option-sun", "no", "option"),
-    NewElement("option-sun", "low", "option"),
-    NewElement("option-sun", "high", "option"),    
-    );
+  // const removeFocus = () => {
+  // document.activeElement.blur();
+  // document.querySelector('.arrow-select-sun').style.transform = "rotate(0deg)";
+  // };
 
-  boxSelect.append(SelectSun, arrowSelect)
+  // const changeSelect = () => {
+  //   removeFocus();
+  // }
 
-  CardSun.append(
-    Img("icon-card-select", ImageGlobal.iconSun, "icon Sun"),
-    TextCardSun,
-    boxSelect
-  );
+  // const boxSelect = NewElement("box-select", "", "div");
+  // const arrowSelect = NewElement("arrow-select-sun", "", "div");
 
-  
+  // const selectInFocus = () => {
+  // arrowSelect.style.transform = "rotate(180deg)";
+  // };
+
+  // SelectSun.addEventListener("focus", selectInFocus);
+  // SelectSun.addEventListener("blur", removeFocus);
+  // SelectSun.addEventListener("change", changeSelect);
+
+  // SelectSun.append(
+  //   newOption,
+  //   NewElement("option-sun", "no", "option"),
+  //   NewElement("option-sun", "low", "option"),
+  //   NewElement("option-sun", "high", "option"),
+  //   );
+
+  // boxSelect.append(SelectSun, arrowSelect)
+
+  // CardSun.append(
+  //   Img("icon-card-select", ImageGlobal.iconSun, "icon Sun"),
+  //   TextCardSun,
+  //   boxSelect
+  // );
+
   // [END] CARD SUN
 
   // [INIT] CARD WATER
   const CardWater = NewElement("card-select", "", "aside");
-  const TextCardWater = NewElement("text-card", "", "p");
+  const TextCardWater = NewElement("text-card-water", "", "p");
   TextCardWater.append(
     NewElement("text-bold", "2. ", "span"),
     "How often do you want to",
@@ -97,12 +109,11 @@ export default () => {
 
   BoardSelect.append(CardSun, CardWater, CardDog);
 
-
   // <select id="nameSelect" onfocus="javascript:document.getElementById('nameSelect').selectedIndex=-1;" onchange="doSomething(this);">
-//     <option value="A">A</option>
-//     <option value="B">B</option>
-//     <option value="C">C</option>
-// </select>
+  //     <option value="A">A</option>
+  //     <option value="B">B</option>
+  //     <option value="C">C</option>
+  // </select>
 
   return BoardSelect;
 };

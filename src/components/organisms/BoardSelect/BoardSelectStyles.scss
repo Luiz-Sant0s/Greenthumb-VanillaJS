@@ -15,7 +15,6 @@
 
   @media screen and (max-width: 999px) {
     gap: 40px;
-
     flex-direction: column;
     height: auto;
     padding: 20px 0;
@@ -24,77 +23,4 @@
   @media screen and (max-width: 900px) {
     gap: 40px;
   };
-}
-
-.card-select {
-  width: 260px;
-  height: 190px;
-}
-
-.icon-card-select {
-  width: 75px;
-  height: 75px;
-  margin-bottom: -5px;
-}
-
-.text-card {
-  font-family: Montserrat;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 22px;
-  color: #848484;
-  width: 206px;
-}
-
-.text-card-dog {
-  @extend .text-card;
-  width: 202px;
-}
-
-.text-bold {
-  @extend .text-card;
-  font-weight: 700;
-}
-
-.select-sun {
-  width: 100%;
-  height: 40px;
-  border: 1px solid #a8a8a8;
-  background-color: transparent;
-  box-sizing: border-box;
-  border-radius: 19px;
-  padding: 6px 16px;
-
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 27px;
-  color: #A8A8A8; 
-}
-
-.option-sun * {
-  border-radius: 19px;
-}
-
-.option-sun:disabled {
-  background-color: #d3d3d399;
-  color: #A8A8A8;
-  font-weight: 300;
-  opacity: 0.9;
-}
-
-.box-select {
-
-}
-
-.arrow-select-sun {
-  height: 10px;
-  width: 20px;
-  position: relative;
-  left: 226px;
-  bottom: 24px;
-  background-image: url("/images/icons/arrow-select.svg");
-  background-repeat: no-repeat;
-  transition: 0.4s;
 }

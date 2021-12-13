@@ -1,0 +1,79 @@
+@mixin text-card {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 22px;
+  color: #848484;
+  width: 206px;
+}
+
+.card-select {
+  width: 260px;
+  height: 190px;
+}
+
+.icon-card-select {
+  width: 75px;
+  height: 75px;
+  margin-bottom: -5px;
+}
+
+.text-card-sun {
+  @include text-card;
+}
+
+.text-card-water {
+  @include text-card;
+}
+
+.text-card-dog {
+  @include text-card;
+  width: 202px;
+}
+
+.text-bold {
+  @include text-card;
+  font-weight: 700;
+}
+
+.select-to-options {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #a8a8a8;
+  background-color: transparent;
+  box-sizing: border-box;
+  border-radius: 19px;
+  padding: 6px 16px;
+
+  font-family: Montserrat;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 27px;
+  color: #a8a8a8;
+}
+
+// .options-card {
+//   border-radius: 19px;
+// }
+
+.first-option:disabled {
+  background-color: #d3d3d399;
+  color: #a8a8a8;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.box-select {
+  width: 100%;
+}
+
+.arrow-select {
+  height: 10px;
+  width: 20px;
+  position: relative;
+  left: 226px;
+  bottom: 24px;
+  background-image: url("/images/icons/arrow-select.svg");
+  background-repeat: no-repeat;
+  transition: 0.4s;
+}

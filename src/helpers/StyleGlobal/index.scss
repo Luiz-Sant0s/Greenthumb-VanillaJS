@@ -1,10 +1,10 @@
-@import "../../components/organisms/Header/HeaderStyles.scss";
-@import "../../components/organisms/BoardSelect/BoardSelectStyles.scss";
+@import "/src/components/molecules/CardSelect/CardSelect.scss";
+@import "/src/components/organisms/Header/HeaderStyles.scss";
+@import "/src/components/organisms/BoardSelect/BoardSelectStyles.scss";
 
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  background-color: green;
 }
 
 img {
@@ -12,18 +12,14 @@ img {
 }
 
 select {
-  -webkit-appearance: none;
-  
+  -webkit-appearance: none;  
 }
 
 select:focus {
-  border: 1px solid #75BC97;
+  border: 1px solid #FD9872;
   outline-style: none;
 }
 
 // select.decorated  {
 //   background-color: #15573F;
-//   border-radius: 30px;
-//   width: auto;
-//   width:96px; position:absolute; z-index:+1;
 // }
