@@ -10,3 +10,19 @@ body {
 img {
   pointer-events: none;
 }
+
+select {
+  -webkit-appearance: none;
+}
+
+select:focus {
+  border: 1px solid #75BC97;
+  outline-style: none;
+}
+
+// select.decorated  {
+//   background-color: #15573F;
+//   border-radius: 30px;
+//   width: auto;
+//   width:96px; position:absolute; z-index:+1;
+// }

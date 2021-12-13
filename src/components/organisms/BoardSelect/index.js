@@ -5,6 +5,7 @@ import NewElement from "../../atoms/NewElement";
 export default () => {
   const BoardSelect = NewElement("board-select", "", "section");
 
+  // [INIT] CARD SUN
   const CardSun = NewElement("card-select", "", "aside");
   const TextCardSun = NewElement("text-card", "", "p");
   TextCardSun.append(
@@ -13,11 +14,54 @@ export default () => {
     NewElement("text-bold", " sunlight ", "span"),
     "your plant will get."
   );
+
+  const newOption = NewElement("option-sun", "Select...", "option");
+  newOption.setAttribute("disabled", true);
+  newOption.setAttribute("selected", true);
+
+  const SelectSun = NewElement("select-sun", "", "select");
+
+  const removeFocus = () => {
+    console.log("..........", SelectSun.value)
+  document.activeElement.blur();
+  // BoardSelect.style.backgroundColor = "blue";
+  document.querySelector('.arrow-select-sun').style.transform = "rotate(0deg)";
+  };
+
+  const arrowSelect = NewElement("arrow-select-sun", "", "div");
+
+  const selectInFocus = () => {
+  // BoardSelect.style.backgroundColor = "#FF0F0F";
+  arrowSelect.style.transform = "rotate(180deg)";
+
+  };
+
+  SelectSun.addEventListener("focus", selectInFocus);
+   SelectSun.addEventListener("blur", removeFocus);
+  SelectSun.addEventListener("click", removeFocus);
+
+  const boxSelect = NewElement("box-select", "", "div");
+  
+
+  SelectSun.append(
+    newOption,
+    NewElement("option-sun", "no", "option"),
+    NewElement("option-sun", "low", "option"),
+    NewElement("option-sun", "high", "option"),    
+    );
+
+  boxSelect.append(SelectSun, arrowSelect)
+
   CardSun.append(
     Img("icon-card-select", ImageGlobal.iconSun, "icon Sun"),
-    TextCardSun
+    TextCardSun,
+    boxSelect
   );
 
+  
+  // [END] CARD SUN
+
+  // [INIT] CARD WATER
   const CardWater = NewElement("card-select", "", "aside");
   const TextCardWater = NewElement("text-card", "", "p");
   TextCardWater.append(
@@ -30,7 +74,9 @@ export default () => {
     Img("icon-card-select", ImageGlobal.iconWater, "icon Water"),
     TextCardWater
   );
+  // [END] CARD SUN
 
+  // [INIT] CARD DOG
   const CardDog = NewElement("card-select", "", "aside");
   const TextCardDog = NewElement("text-card-dog", "", "p");
   TextCardDog.append(
@@ -43,8 +89,16 @@ export default () => {
     Img("icon-card-select", ImageGlobal.iconChew, "icon Chew"),
     TextCardDog
   );
+  // [INIT] CARD DOG
 
   BoardSelect.append(CardSun, CardWater, CardDog);
+
+
+  // <select id="nameSelect" onfocus="javascript:document.getElementById('nameSelect').selectedIndex=-1;" onchange="doSomething(this);">
+//     <option value="A">A</option>
+//     <option value="B">B</option>
+//     <option value="C">C</option>
+// </select>
 
   return BoardSelect;
 };

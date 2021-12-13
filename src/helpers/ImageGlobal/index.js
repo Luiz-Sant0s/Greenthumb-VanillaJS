@@ -1,20 +1,20 @@
 const ImageGlobal = {
      // HEADER
-    leftLeaves: require("../../../images/hero/desktop/left-leaves.png"),
-    logoWhite: require("../../../images/icons/logo-white.svg"),
-    arrowDown: require("../../../images/icons/arrow-down.svg"),
-    plantPerson: require("../../../images/hero/desktop/plantperson.png"),
-    rightLeaves: require("../../../images/hero/desktop/right-leaves.png"),
+    leftLeaves: require("/images/hero/desktop/left-leaves.png"),
+    logoWhite: require("/images/icons/logo-white.svg"),
+    arrowDown: require("/images/icons/arrow-down.svg"),
+    plantPerson: require("/images/hero/desktop/plantperson.png"),
+    rightLeaves: require("/images/hero/desktop/right-leaves.png"),
 
     // HEADER MOBILE
-    mobileLeaves: require("../../../images/hero/mobile/mobile-leaves.png"),
-    mobileLogoWhite: require("../../../images/icons/mobile-logo-white.svg"),
-    mobilePlantPerson: require("../../../images/hero/mobile/mobile-plantperson.png"),
+    mobileLeaves: require("/images/hero/mobile/mobile-leaves.png"),
+    mobileLogoWhite: require("/images/icons/mobile-logo-white.svg"),
+    mobilePlantPerson: require("/images/hero/mobile/mobile-plantperson.png"),
 
     // CARDSELECT
-    iconSun: require("../../../images/illustrations/sun.png"),
-    iconWater: require("../../../images/illustrations/wateringcan.png"),
-    iconChew: require("../../../images/illustrations/dog.png"),
+    iconSun: require("/images/illustrations/sun.png"),
+    iconWater: require("/images/illustrations/wateringcan.png"),
+    iconChew: require("/images/illustrations/dog.png"),
 
     
 }
