@@ -8,8 +8,8 @@ export default (
   initDescription,
   textBold,
   endDescription,
-  changeSelect,
-  valuesOptions
+  valuesOptions,
+  changeSelect
 ) => {
   const Card = NewElement("card-select", "", "aside");
   Card.setAttribute("id", `card-select-${nameComp}`);

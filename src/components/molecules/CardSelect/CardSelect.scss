@@ -10,6 +10,7 @@
 .card-select {
   width: 260px;
   height: 190px;
+  z-index: 1;
 }
 
 .icon-card-select {
@@ -26,7 +27,7 @@
   @include text-card;
 }
 
-.text-card-dog {
+.text-card-pets {
   @include text-card;
   width: 202px;
 }
@@ -76,4 +77,5 @@
   background-image: url("/images/icons/arrow-select.svg");
   background-repeat: no-repeat;
   transition: 0.4s;
+  z-index: -1;
 }
