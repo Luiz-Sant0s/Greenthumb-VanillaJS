@@ -16,6 +16,9 @@ const ImageGlobal = {
     iconWater: require("/images/illustrations/wateringcan.png"),
     iconChew: require("/images/illustrations/dog.png"),
 
+    // NO RESULTS
+    iconNoResult: require("/images/illustrations/no-results.png"),
+
     
 }
 

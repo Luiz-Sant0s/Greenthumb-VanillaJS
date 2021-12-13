@@ -1,6 +1,7 @@
 @import "/src/components/molecules/CardSelect/CardSelect.scss";
 @import "/src/components/organisms/Header/HeaderStyles.scss";
 @import "/src/components/organisms/BoardSelect/BoardSelectStyles.scss";
+@import "/src/components/organisms/BoxNoResults/BoxNoResults.scss";
 
 body {
   margin: 0;
@@ -16,7 +17,8 @@ select {
 }
 
 select:focus {
-  border: 1px solid #FD9872;
+  // border: 1px solid #FD9872;
+  border: 2px solid;
   outline-style: none;
 }
 

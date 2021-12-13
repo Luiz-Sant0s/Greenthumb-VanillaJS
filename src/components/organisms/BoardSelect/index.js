@@ -1,5 +1,4 @@
 import ImageGlobal from "../../../helpers/ImageGlobal";
-import Img from "../../atoms/Img";
 import NewElement from "../../atoms/NewElement";
 import CardSelect from "../../molecules/CardSelect";
 
@@ -17,8 +16,8 @@ export default () => {
     const valueCardPets = document.getElementById("select-pets");
 
     if (
-      valueCardSun.value &&
-      valueCardWater.value &&
+      valueCardSun.value !== "Select..." &&
+      valueCardWater.value !== "Select..." &&
       valueCardPets.value !== "Select..."
     ) {
       // console.log(
