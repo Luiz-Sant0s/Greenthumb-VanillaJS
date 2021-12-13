@@ -22,23 +22,27 @@ export default () => {
   const SelectSun = NewElement("select-sun", "", "select");
 
   const removeFocus = () => {
-    console.log("..........", SelectSun.value)
+    console.log("......perdeu o foco....", SelectSun.value)
   document.activeElement.blur();
-  // BoardSelect.style.backgroundColor = "blue";
   document.querySelector('.arrow-select-sun').style.transform = "rotate(0deg)";
   };
+
+  const changeSelect = () => {
+    removeFocus();
+    console.log("VALUE SELECT", SelectSun.value)
+  }
 
   const arrowSelect = NewElement("arrow-select-sun", "", "div");
 
   const selectInFocus = () => {
-  // BoardSelect.style.backgroundColor = "#FF0F0F";
+  
   arrowSelect.style.transform = "rotate(180deg)";
 
   };
 
   SelectSun.addEventListener("focus", selectInFocus);
    SelectSun.addEventListener("blur", removeFocus);
-  SelectSun.addEventListener("click", removeFocus);
+   SelectSun.addEventListener("change", changeSelect);
 
   const boxSelect = NewElement("box-select", "", "div");
   

@@ -14,3 +14,10 @@ Para gerar a URL de preview ou "fazer o deploy", basta rodar o comando `yarn dep
 
 ![Screen Shot 2021-10-22 at 17 43 58](https://user-images.githubusercontent.com/92953864/138524410-480ed8d8-a567-4ba4-aa51-1b4337ce2ada.png)
 ![Screen Shot 2021-10-22 at 17 45 44](https://user-images.githubusercontent.com/92953864/138524435-8724d434-1dac-4664-a5a1-9f7b32556f8c.png)
+
+
+
+
+
+link SITE >>
+greenthumb-vanillajs.surge.sh
