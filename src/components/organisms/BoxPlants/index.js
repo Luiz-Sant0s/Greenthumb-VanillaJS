@@ -19,7 +19,18 @@ export default (data) => {
   const containerPlants = NewElement("container-plants", "", "div"); 
 
    data.map((infCard, index) => containerPlants.append(CardPlant(index, infCard.url, infCard.name, infCard.price, infCard.toxicity, infCard.sun, infCard.water)));
+
+   const btnToTop = NewElement("btn-to-top", "back to the top", "button");
+   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+   btnToTop.addEventListener("click", scrollToTop);
+   const iconArrowUp = Img(
+    "icon-arrow-up",
+    ImageGlobal.arrowUp,
+    "icon arrow up"
+  );
+  btnToTop.append(iconArrowUp);
+ 
   
-  BoxPlants.append(contianerIconTitle,containerPlants);
+  BoxPlants.append(contianerIconTitle, containerPlants, btnToTop);
   return BoxPlants;
 };

@@ -46,8 +46,6 @@ export default (orderPlant, src, namePlant, price, toxic, sun, water) => {
   const iconPet = Img("icons", selectIconPet(), `img pet`);
   iconPet.setAttribute("id", `icons-${orderPlant+1}`);
   
-
-
   const containerIcons = NewElement("container-icons", "", "div");
   containerIcons.append(iconPet, iconSun, iconWater);
 

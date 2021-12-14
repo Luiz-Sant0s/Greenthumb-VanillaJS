@@ -19,11 +19,13 @@ select {
 }
 
 select:focus {
-  // border: 1px solid #FD9872;
   border: 2px solid;
   outline-style: none;
+  // border: 1px solid #15573f;
 }
 
-// select.decorated  {
-//   background-color: #15573F;
-// }
+select:hover  {
+ border: 2px solid #15573f99;
+ color: #15573f99;
+ font-weight: bold;
+}

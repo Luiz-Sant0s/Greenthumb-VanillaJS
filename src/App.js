@@ -19,8 +19,7 @@ const App = () => {
 
   App.append(BoardSelect());
   App.append(BoxNoResults());
-  // App.append(BoxPlants());
-
+  
   return App;
 };
 

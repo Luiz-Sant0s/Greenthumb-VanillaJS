@@ -53,9 +53,11 @@
   color: #a8a8a8;
 }
 
-// .options-card {
-//   border-radius: 19px;
-// }
+.select-to-options:hover {  
+    cursor: pointer;
+    opacity: 0.6;
+    transform: scale(1.1);  
+}
 
 .first-option:disabled {
   background-color: #d3d3d399;
