@@ -51,14 +51,16 @@ export default (
 
   const applyFavoriteStamp = () => {
     if (staffFavorit) {
+      const containerStaffFavorite = NewElement("container-staff-favorite", "", "div");
+      containerStaffFavorite.setAttribute("id", `container-staff-favorite-${orderPlant + 1}`);
       const staffFavorite = Img(
         "staff-favorite",
         ImageGlobal.staffFav,
         `img staff favorite`
       );
       staffFavorite.setAttribute("id", `staff-favorite-${orderPlant + 1}`);
-
-      return CardPlant.append(staffFavorite);
+      containerStaffFavorite.append(staffFavorite);
+      return CardPlant.append(containerStaffFavorite);
     }
 
     if (!staffFavorit) return null;

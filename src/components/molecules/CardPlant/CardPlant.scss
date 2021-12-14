@@ -155,10 +155,23 @@
   }
 }
 
-.staff-favorite {
-
+.container-staff-favorite {
+  width: 100%;
+  position: relative;
+  top: 20px;
 }
 
-#staff-favorite {
+#container-staff-favorite-1 {
   
+  top: 31px;
+}
+
+.staff-favorite {
+  width: 130px;
+  height: 35px;
+}
+
+#staff-favorite-1 {
+  width: 180px;
+  height: 43px;
 }
