@@ -2,6 +2,7 @@ import ImageGlobal from "../../../helpers/ImageGlobal";
 import NewElement from "../../atoms/NewElement";
 import CardSelect from "../../molecules/CardSelect";
 import BoxPlants from "../../organisms/BoxPlants";
+import BoxNoResults from "../BoxNoResults";
 
 export default () => {
   const BoardSelect = NewElement("board-select", "", "section");
@@ -19,16 +20,11 @@ export default () => {
     const idBoxNoResults = document.getElementById("box-no-results");
     const idBoxPlants = document.getElementById("box-plants");
 
-    
-
     if (
       valueCardSun.value !== "Select..." &&
       valueCardWater.value !== "Select..." &&
       valueCardPets.value !== "Select..."
     ) {
-
-     
-
       // console.log(
       //   "Dentro desse IF vai vim o FETCH na API, para mostra as plantas que vem como retorno."
       // );
@@ -39,11 +35,9 @@ export default () => {
       // )
       //   .then((r) => r.json())
       //   .then((data) => {
-      
       //      console.log(`dados!  ${data}`);
       //      alert(`Primeira Planta sugerida é!>>  ${data[0].name}`);
       //     alert(`Segunda Planta sugerida é hehe>>, ${data[1].name}`);
-
       //   })
       //   .catch((e) => {
       //     alert(`ERRO AO TENTAR CONSULTAR, =/ ${e}`);
@@ -54,37 +48,21 @@ export default () => {
       request(
         `https://front-br-challenges.web.app/api/v2/green-thumb/?sun=${valueCardSun.value}&water=${valueCardWater.value}&pets=${valueCardPets.value}`,
         (error, response) => {
-          // console.log(response.body);
-          // console.log(response);
-
           try {
             if (response.body) {
               const data = JSON.parse(response.body);
-
-              // alert(`Primeira Planta sugerida é>>, ${data[0].name}`);
-              // alert(`Segunda Planta sugerida hehe >>, ${data[1].name}`);
-              // console.log("............", data);
-
-              //  boxNoResults.style.display = "none";
-              // boxPlants.style.display = "grid";
-
-               
-               if(idBoxPlants) idBoxPlants.remove();              
-               if(idBoxNoResults) idBoxNoResults.remove();
-
-               document.body.append(BoxPlants(data));
-
-
+              if (idBoxPlants) idBoxPlants.remove();
+              if (idBoxNoResults) idBoxNoResults.remove();
+              document.body.append(BoxPlants(data));
             }
-          } catch(e) {
-           
+          } catch {
             alert(`Nenhuma planta encontrada =/`);
-         
+            if (idBoxPlants) idBoxPlants.remove();
+            if (idBoxNoResults) idBoxNoResults.remove();
+            document.body.append(BoxNoResults());
           }
         }
       );
-
-     
     }
   };
 

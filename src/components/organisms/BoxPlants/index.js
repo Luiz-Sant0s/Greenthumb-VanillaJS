@@ -18,7 +18,7 @@ export default (data) => {
 
   const containerPlants = NewElement("container-plants", "", "div"); 
 
-   data.map((infCard, index) => containerPlants.append(CardPlant(index, infCard.url, infCard.name)));
+   data.map((infCard, index) => containerPlants.append(CardPlant(index, infCard.url, infCard.name, infCard.price, infCard.toxicity, infCard.sun, infCard.water)));
   
   BoxPlants.append(contianerIconTitle,containerPlants);
   return BoxPlants;

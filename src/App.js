@@ -4,7 +4,6 @@ import HeaderMobile from "./components/organisms/Header/HeaderMobile";
 // import HeaderJS from "./components/organisms/Header/HeaderJS";
 import BoardSelect from "./components/organisms/BoardSelect";
 import BoxNoResults from "./components/organisms/BoxNoResults";
-import BoxPlants from "./components/organisms/BoxPlants";
 
 const App = () => {
   const App = NewElement("App", "", "main");

@@ -22,6 +22,16 @@ const ImageGlobal = {
     // BOX PLANTS
     iconBoxPlants: require("/images/illustrations/pick.png"),
     plant: require("/images/plants/ponytail-palm.jpg"),
+    pet: require("/images/icons/pet.svg"),
+    toxic: require("/images/icons/toxic.svg"),
+    drop1: require("/images/icons/1-drop.svg"),
+    drop2: require("/images/icons/2-drops.svg"),
+    drop3: require("/images/icons/3-drops.svg"),
+    noSun: require("/images/icons/no-sun.svg"),
+    lowSun: require("/images/icons/low-sun.svg"),
+    highSun: require("/images/icons/high-sun.svg"),
+
+
     
 
     
