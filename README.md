@@ -1,8 +1,7 @@
 <h1 align="center"> Greenthumb-VanillaJs </h1><br/>
 
-  <a align="center" href="https://greenthumb-vanillajs.surge.sh/" target="_blank"> <img  width="20%" src="./images/illustrations/wateringcan.png" /></a>
-  <a align="center" href="https://greenthumb-vanillajs.surge.sh/" target="_blank">
- <img width="10%" src="https://img.icons8.com/doodle/48/000000/plant-under-sun--v1.png"/> </a><a align="center" href=" https://greenthumb-vanillajs.surge.sh/" target="_blank">  click here and browse this page, for more information about the page and download instructions continue =) </a>
+  <a align="center" href="https://greenthumb-vanillajs.surge.sh/" target="_blank"> <img  width="20%" src="./images/illustrations/wateringcan.png" />
+ <img width="10%" src="https://img.icons8.com/doodle/48/000000/plant-under-sun--v1.png"/> click here and browse this page, for more information about the page and download instructions continue =) </a>
 
 
 <br/>
