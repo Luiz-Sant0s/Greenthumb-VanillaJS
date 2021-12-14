@@ -39,6 +39,8 @@
   @media screen and (max-width: 1024px) {
     width: 187px;
     height: 187px;
+    // margin-left: 50px;
+    margin-left: 35px;
   }
 }
 
@@ -49,6 +51,14 @@
   @media screen and (max-width: 1024px) {
     width: 187px;
     height: 187px;
+  }
+}
+
+.description-and-icons {
+  width: 187px;
+
+  @media screen and (max-width: 1024px) {
+    width: 200px
   }
 }
 
