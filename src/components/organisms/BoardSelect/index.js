@@ -55,7 +55,7 @@ export default () => {
               if (idBoxNoResults) idBoxNoResults.remove();
               document.body.append(BoxPlants(data));
             }
-          } catch {
+          } catch(e) {
             alert(`Nenhuma planta encontrada =/`);
             if (idBoxPlants) idBoxPlants.remove();
             if (idBoxNoResults) idBoxNoResults.remove();

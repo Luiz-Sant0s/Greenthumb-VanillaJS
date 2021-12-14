@@ -21,3 +21,6 @@ Para gerar a URL de preview ou "fazer o deploy", basta rodar o comando `yarn dep
 
 link SITE >>
 greenthumb-vanillajs.surge.sh
+
+link codesandbox >>
+https://codesandbox.io/s/suspicious-spence-dbw7d

@@ -1,9 +1,9 @@
-@import "/src/components/molecules/CardSelect/CardSelect.scss";
-@import "/src/components/molecules/CardPlant/CardPlant.scss";
-@import "/src/components/organisms/Header/HeaderStyles.scss";
-@import "/src/components/organisms/BoardSelect/BoardSelectStyles.scss";
-@import "/src/components/organisms/BoxNoResults/BoxNoResults.scss";
-@import "/src/components/organisms/BoxPlants/BoxPlants.scss";
+@import "../../components/molecules/CardSelect/CardSelect.scss";
+@import "../../components/molecules/CardPlant/CardPlant.scss";
+@import "../../components/organisms/Header/HeaderStyles.scss";
+@import "../../components/organisms/BoardSelect/BoardSelectStyles.scss";
+@import "../../components/organisms/BoxNoResults/BoxNoResults.scss";
+@import "../../components/organisms/BoxPlants/BoxPlants.scss";
 
 body {
   margin: 0;
