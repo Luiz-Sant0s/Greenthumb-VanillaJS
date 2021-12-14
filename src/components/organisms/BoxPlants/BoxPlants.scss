@@ -4,7 +4,7 @@
   width: 100%;
   // display: none;
   height: auto;
-display: grid;
+  display: grid;
   // @media screen and (max-width: 949px) {
 
   // };
@@ -34,11 +34,6 @@ display: grid;
   color: #0c261c;
 }
 
-
-
-
-  
-  
 .container-plants {
   display: grid;
   // grid-template-columns: repeat(4, 245px);
@@ -53,12 +48,15 @@ display: grid;
   justify-items: center;
 
   @media screen and (max-width: 999px) {
-    display: flex;
+    width: 300px;
+    height: auto;
+    // display: flex;
     flex-wrap: nowrap;
     overflow-x: scroll;
-  
-  }; 
-
+    overflow: auto;
+    justify-content: flex-start;
+    display: -webkit-box;
+  }
 }
 
 #card-plant-1 {
@@ -69,6 +67,4 @@ display: grid;
   //grid-row-start: 1;
   //grid-row-end: 3;
   // width: 100%;
-
- 
 }
