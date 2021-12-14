@@ -26,43 +26,56 @@ export default () => {
       valueCardPets.value !== "Select..."
     ) {
       // console.log(
-      //   "Dentro desse IF vai vim o FETCH na API, para mostra as plantas que vem como retorno."
+      //   "Dentro desse IF vai vim a respota da API."
       // );
 
-      // V1  modo de buscar os dados
-      // fetch(
-      //   `https://front-br-challenges.web.app/api/v2/green-thumb/?sun=${valueCardSun.value}&water=${valueCardWater.value}&pets=${valueCardPets.value}`
-      // )
-      //   .then((r) => r.json())
-      //   .then((data) => {
-      //      console.log(`dados!  ${data}`);
-      //      alert(`Primeira Planta sugerida é!>>  ${data[0].name}`);
-      //     alert(`Segunda Planta sugerida é hehe>>, ${data[1].name}`);
-      //   })
-      //   .catch((e) => {
-      //     alert(`ERRO AO TENTAR CONSULTAR, =/ ${e}`);
-      //   });
+      // [V1]  modo 1 de buscar os dados
+      valueCardSun.setAttribute("disabled", true); // Desabilitando para não conseguir fazer
+      valueCardWater.setAttribute("disabled", true); // varias requisições, antes ter
+      valueCardPets.setAttribute("disabled", true); // terminado a primeira.
+      fetch(
+        `https://front-br-challenges.web.app/api/v2/green-thumb/?sun=${valueCardSun.value}&water=${valueCardWater.value}&pets=${valueCardPets.value}`
+      )
+        .then((r) => r.json())
+        .then((data) => {
+          if (idBoxPlants) idBoxPlants.remove();
+          if (idBoxNoResults) idBoxNoResults.remove();
+          document.body.append(BoxPlants(data));
+          console.log("............", data);
 
-      // v2 outro modo de buscar os dados
-      const request = require("request");
-      request(
-        `https://front-br-challenges.web.app/api/v2/green-thumb/?sun=${valueCardSun.value}&water=${valueCardWater.value}&pets=${valueCardPets.value}`,
-        (error, response) => {
-          try {
-            if (response.body) {
-              const data = JSON.parse(response.body);
-              if (idBoxPlants) idBoxPlants.remove();
-              if (idBoxNoResults) idBoxNoResults.remove();
-              document.body.append(BoxPlants(data));
-            }
-          } catch(e) {
-            alert(`Nenhuma planta encontrada =/`);
-            if (idBoxPlants) idBoxPlants.remove();
-            if (idBoxNoResults) idBoxNoResults.remove();
-            document.body.append(BoxNoResults());
-          }
-        }
-      );
+          valueCardSun.removeAttribute("disabled");
+          valueCardWater.removeAttribute("disabled");
+          valueCardPets.removeAttribute("disabled");
+        })
+        .catch((e) => {
+          if (idBoxPlants) idBoxPlants.remove();
+          if (idBoxNoResults) idBoxNoResults.remove();
+          document.body.append(BoxNoResults());
+
+          alert("No plants were found =/");
+          console.log("ERROR... ", e);
+        });
+
+      // [V2]  modo 2 de buscar os dados
+      // const request = require("request");
+      // request(
+      //   `https://front-br-challenges.web.app/api/v2/green-thumb/?sun=${valueCardSun.value}&water=${valueCardWater.value}&pets=${valueCardPets.value}`,
+      //   (error, response) => {
+      //     try {
+      //       if (response.body) {
+      //         const data = JSON.parse(response.body);
+      //         if (idBoxPlants) idBoxPlants.remove();
+      //         if (idBoxNoResults) idBoxNoResults.remove();
+      //         document.body.append(BoxPlants(data));
+      //       }
+      //     } catch(e) {
+      //       alert(`No plants were found =/`);
+      //       if (idBoxPlants) idBoxPlants.remove();
+      //       if (idBoxNoResults) idBoxNoResults.remove();
+      //       document.body.append(BoxNoResults());
+      //     }
+      //   }
+      // );
     }
   };
 
