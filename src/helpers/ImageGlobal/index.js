@@ -30,12 +30,8 @@ const ImageGlobal = {
     noSun: require("/images/icons/no-sun.svg"),
     lowSun: require("/images/icons/low-sun.svg"),
     highSun: require("/images/icons/high-sun.svg"),
-    arrowUp: require("/images/icons/arrow-up.svg")
-
-
-    
-
-    
+    arrowUp: require("/images/icons/arrow-up.svg"),
+    staffFav: require("/images/illustrations/staff-fav.png")    
 }
 
 export default ImageGlobal
