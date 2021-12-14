@@ -4,6 +4,7 @@ import NewElement from "../../atoms/NewElement";
 
 export default () => {
   const BoxNoResults = NewElement("box-no-results", "", "section");
+  BoxNoResults.setAttribute("id", "box-no-results");
 
   const containerDescription = NewElement("container-description", "", "aside");
   const titleNoResults = NewElement(

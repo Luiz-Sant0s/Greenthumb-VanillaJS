@@ -9,6 +9,7 @@
     "deploy": "npm run build && surge ./dist"
   },
   "dependencies": {
+    "images": "^3.2.3",
     "parcel": "1.12.4",
     "surge": "^0.23.0"
   },

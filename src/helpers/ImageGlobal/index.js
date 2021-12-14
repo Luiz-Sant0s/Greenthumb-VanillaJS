@@ -19,6 +19,11 @@ const ImageGlobal = {
     // NO RESULTS
     iconNoResult: require("/images/illustrations/no-results.png"),
 
+    // BOX PLANTS
+    iconBoxPlants: require("/images/illustrations/pick.png"),
+    plant: require("/images/plants/ponytail-palm.jpg"),
+    
+
     
 }
 
