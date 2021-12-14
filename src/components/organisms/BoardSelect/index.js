@@ -54,6 +54,10 @@ export default () => {
 
           alert("No plants were found =/");
           console.log("ERROR... ", e);
+
+          valueCardSun.removeAttribute("disabled");
+          valueCardWater.removeAttribute("disabled");
+          valueCardPets.removeAttribute("disabled");
         });
 
       // [V2]  modo 2 de buscar os dados
