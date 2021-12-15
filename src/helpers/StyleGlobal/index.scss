@@ -19,7 +19,8 @@ select {
 }
 
 select:focus {
-  border: 2px solid;
+  // border: 2px solid;
   outline-style: none;
-  // border: 1px solid #15573f;
+  // border: 2px solid #15573f;
+  border: 2px solid #FD9872;
 }
