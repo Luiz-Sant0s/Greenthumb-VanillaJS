@@ -28,6 +28,7 @@ export default (
 
   const select = NewElement(`select-to-options`, "", "select");
   select.setAttribute("id", `select-${nameComp}`);
+  select.classList.add("hover-select");
 
   const firstOption = NewElement("first-option", "Select...", "option");
   firstOption.setAttribute("id", "option-Select...");

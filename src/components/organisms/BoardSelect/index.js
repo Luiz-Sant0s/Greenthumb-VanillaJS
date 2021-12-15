@@ -29,6 +29,20 @@ export default () => {
       valueCardSun.removeAttribute("disabled");
       valueCardWater.removeAttribute("disabled");
       valueCardPets.removeAttribute("disabled");
+
+      valueCardSun.classList.add("hover-select");
+      valueCardWater.classList.add("hover-select");
+      valueCardPets.classList.add("hover-select");
+
+    };
+
+    const scrollToResult = () => {
+      window.scrollTo({
+        top:
+          idBoardSelect.offsetTop +
+          idBoardSelect.getBoundingClientRect().height,
+        behavior: "smooth",
+      });
     };
 
     if (
@@ -41,6 +55,11 @@ export default () => {
       valueCardSun.setAttribute("disabled", true); // Desabilitando para não conseguir fazer
       valueCardWater.setAttribute("disabled", true); // varias requisições, antes de ter
       valueCardPets.setAttribute("disabled", true); // terminado a primeira.
+
+      valueCardSun.classList.remove("hover-select");
+      valueCardWater.classList.remove("hover-select");
+      valueCardPets.classList.remove("hover-select");
+
       fetch(
         `https://front-br-challenges.web.app/api/v2/green-thumb/?sun=${valueCardSun.value}&water=${valueCardWater.value}&pets=${valueCardPets.value}`
       )
@@ -53,12 +72,8 @@ export default () => {
           });
 
           document.body.append(BoxPlants(sortFavoriteFirst));
-          window.scrollTo({
-            top:
-              idBoardSelect.offsetTop +
-              idBoardSelect.getBoundingClientRect().height,
-            behavior: "smooth",
-          });
+          scrollToResult();
+         
         })
         .catch((e) => {
           removeElementAndDisabled();
@@ -67,6 +82,8 @@ export default () => {
 
           alert("No plants were found =/");
           console.log("ERROR... ", e);
+          
+          scrollToResult();
         });
 
       // [V2]  modo 2 de buscar os dados

@@ -53,10 +53,14 @@
   color: #a8a8a8;
 }
 
-.select-to-options:hover {  
-    cursor: pointer;
-    opacity: 0.6;
-    transform: scale(1.1);  
+.hover-select:hover {  
+  cursor: pointer;
+  opacity: 0.6;
+  transform: scale(1.1);  
+
+  border: 2px solid #15573f99;
+  color: #15573f99;
+  font-weight: bold;
 }
 
 .first-option:disabled {
@@ -81,3 +85,4 @@
   transition: 0.4s;
   z-index: -1;
 }
+
