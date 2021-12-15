@@ -19,9 +19,10 @@
 <P align="center"><strong> MOBILE </strong></P>
 
 <section align="center">
-<img  width="30%" src="./images/readme/imgs/mobile-1.png" />
-<img  width="30%" src="./images/readme/imgs/mobile-2.png" />
-<img  width="30%" src="./images/readme/imgs/mobile-3.png" />
+<img  width="23%" src="./images/readme/imgs/mobile-1.png" />
+<img  width="23%" src="./images/readme/imgs/mobile-2.png" />
+<img  width="23%" src="./images/readme/imgs/mobile-3.png" />
+<img  width="23%" src="./images/readme/imgs/mobile-4.png" />
 
 <br/>
 <p align="center"><strong>Navigation demo MOBILE</strong></p>
@@ -33,12 +34,13 @@
 <P align="center"><strong> DESKTOP </strong></P>
 
 <section align="center">
-<img  width="30%" src="./images/readme/imgs/desktop-1.png" />
-<img  width="30%" src="./images/readme/imgs/desktop-2.png" />
-<img  width="30%" src="./images/readme/imgs/desktop-3.png" />
+<img  width="23%" src="./images/readme/imgs/desktop-1.png" />
+<img  width="23%" src="./images/readme/imgs/desktop-2.png" />
+<img  width="23%" src="./images/readme/imgs/desktop-3.png" />
+<img  width="23%" src="./images/readme/imgs/desktop-4.png" />
 
 <br/>
-<p align="center"><strong>Navigation demo MOBILE</strong></p>
+<p align="center"><strong>Navigation demo DESKTOP</strong></p>
 
 ![gif mobile Hash Game](./images/readme/gifs/video-desktop.gif)
 
