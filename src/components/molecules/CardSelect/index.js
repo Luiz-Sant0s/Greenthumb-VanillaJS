@@ -61,6 +61,7 @@ export default (
 
   const selectInFocus = () => {
     arrowSelect.style.transform = "rotate(180deg)";
+    firstOption.removeAtribute("selected");
   };
 
   select.addEventListener("focus", selectInFocus);

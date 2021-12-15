@@ -53,15 +53,15 @@
   color: #a8a8a8;
 }
 
-.hover-select:hover {  
-  cursor: pointer;
-  opacity: 0.6;
-  transform: scale(1.1);  
+// .hover-select:hover {  SABE LA DEUS O POR QUER ESSE HOVER QUEBRA TUDO NO
+//   cursor: pointer;                       NAVEGADOR FIREFOX
+//   opacity: 0.6;
+//   transform: scale(1.1);  
 
-  border: 2px solid #15573f99;
-  color: #15573f99;
-  font-weight: bold;
-}
+//   border: 2px solid #15573f99;
+//   color: #15573f99;
+//   font-weight: bold;
+// }
 
 .first-option:disabled {
   background-color: #d3d3d399;
