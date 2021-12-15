@@ -6,62 +6,67 @@ import BoxNoResults from "../BoxNoResults";
 
 export default () => {
   const BoardSelect = NewElement("board-select", "", "section");
+  BoardSelect.setAttribute("id", "board-select");
 
   const optionsSun = ["no", "low", "high"];
   const optionsWater = ["regularly", "daily", "rarely"];
   const optionsPets = [true, false];
 
   const changeSelect = () => {
-    // console.log("FUNÇÃO QUE VAI GERENCIAR A MUDANÇA DAS PLANTAS");
+    // console.log("changeSelect >> FUNÇÃO QUE VAI GERENCIAR A MUDANÇA DOS BOX'S TIRANDO O NO RESULT E COLOCANDO O DAS PLANTAS, VIRCE-VERSA.");
     const valueCardSun = document.getElementById("select-sun");
     const valueCardWater = document.getElementById("select-water");
     const valueCardPets = document.getElementById("select-pets");
 
     const idBoxNoResults = document.getElementById("box-no-results");
     const idBoxPlants = document.getElementById("box-plants");
+    const idBoardSelect = document.getElementById("board-select");
+
+    const removeElementAndDisabled = () => {
+      if (idBoxPlants) idBoxPlants.remove();
+      if (idBoxNoResults) idBoxNoResults.remove();
+
+      valueCardSun.removeAttribute("disabled");
+      valueCardWater.removeAttribute("disabled");
+      valueCardPets.removeAttribute("disabled");
+    };
 
     if (
       valueCardSun.value !== "Select..." &&
       valueCardWater.value !== "Select..." &&
       valueCardPets.value !== "Select..."
     ) {
-      // console.log(
-      //   "Dentro desse IF vai vim a respota da API."
-      // );
-
+      
       // [V1]  modo 1 de buscar os dados
       valueCardSun.setAttribute("disabled", true); // Desabilitando para não conseguir fazer
-      valueCardWater.setAttribute("disabled", true); // varias requisições, antes ter
+      valueCardWater.setAttribute("disabled", true); // varias requisições, antes de ter
       valueCardPets.setAttribute("disabled", true); // terminado a primeira.
       fetch(
         `https://front-br-challenges.web.app/api/v2/green-thumb/?sun=${valueCardSun.value}&water=${valueCardWater.value}&pets=${valueCardPets.value}`
       )
         .then((r) => r.json())
         .then((data) => {
-          if (idBoxPlants) idBoxPlants.remove();
-          if (idBoxNoResults) idBoxNoResults.remove();
-          
-          const sortFavoriteFirst = data.sort((a,b) => {
+          removeElementAndDisabled();
+
+          const sortFavoriteFirst = data.sort((a, b) => {
             return b.staff_favorite - a.staff_favorite;
           });
-          
-          document.body.append(BoxPlants(sortFavoriteFirst));
 
-          valueCardSun.removeAttribute("disabled");
-          valueCardWater.removeAttribute("disabled");
-          valueCardPets.removeAttribute("disabled");
+          document.body.append(BoxPlants(sortFavoriteFirst));
+          window.scrollTo({
+            top:
+              idBoardSelect.offsetTop +
+              idBoardSelect.getBoundingClientRect().height,
+            behavior: "smooth",
+          });
         })
         .catch((e) => {
-          if (idBoxPlants) idBoxPlants.remove();
-          if (idBoxNoResults) idBoxNoResults.remove();
+          removeElementAndDisabled();
+
           document.body.append(BoxNoResults());
 
           alert("No plants were found =/");
           console.log("ERROR... ", e);
-
-          valueCardSun.removeAttribute("disabled");
-          valueCardWater.removeAttribute("disabled");
-          valueCardPets.removeAttribute("disabled");
         });
 
       // [V2]  modo 2 de buscar os dados

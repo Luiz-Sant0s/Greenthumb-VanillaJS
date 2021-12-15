@@ -7,11 +7,11 @@
 
 .contianer-icon-title {
   width: 976px;
-  margin: 80px auto;
-  height: 110px;
+  margin: 40px auto 45px auto;
 
   @media screen and (max-width: 1024px) {
     width: 80%;
+    margin: 32px auto 16px auto;
   }
 }
 
@@ -24,16 +24,23 @@
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
-  font-size: 45px;
-  line-height: 50px;
+  font-size: 52px;
+  line-height: 47px;
   margin: 20px 0;
   color: #0c261c;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 44px;
+    width: 245px;
+    margin: 16px auto 0 0;
+    line-height: 49px;
+  }
 }
 
 .container-plants {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  // grid-template-rows: repeat(3, 1fr);
   grid-gap: 25px;
   margin: 0 auto;
 
@@ -48,8 +55,6 @@
     overflow: auto;
     justify-content: flex-start;
     display: -webkit-box;
-    margin: 36px;
-    margin: 36px auto;
     width: 80%;
   }
 }
@@ -87,6 +92,7 @@
 
   @media screen and (max-width: 1024px) {
     width: 80%;
+    margin: 26px auto;
   }
 }
 
