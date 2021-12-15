@@ -40,8 +40,12 @@ export default () => {
         .then((data) => {
           if (idBoxPlants) idBoxPlants.remove();
           if (idBoxNoResults) idBoxNoResults.remove();
-          document.body.append(BoxPlants(data));
-          console.log("............", data);
+          
+          const sortFavoriteFirst = data.sort((a,b) => {
+            return b.staff_favorite - a.staff_favorite;
+          });
+          
+          document.body.append(BoxPlants(sortFavoriteFirst));
 
           valueCardSun.removeAttribute("disabled");
           valueCardWater.removeAttribute("disabled");
