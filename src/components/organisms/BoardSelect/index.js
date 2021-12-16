@@ -11,7 +11,7 @@ export default () => {
   const optionsSun = ["no", "low", "high"];
   const optionsWater = ["regularly", "daily", "rarely"];
   const optionsPets = [true, false];
-
+  
   const changeSelect = () => {
     // console.log("changeSelect >> FUNÇÃO QUE VAI GERENCIAR A MUDANÇA DOS BOX'S TIRANDO O NO RESULT E COLOCANDO O DAS PLANTAS, VIRCE-VERSA.");
     const valueCardSun = document.getElementById("select-sun");
@@ -21,10 +21,12 @@ export default () => {
     const idBoxNoResults = document.getElementById("box-no-results");
     const idBoxPlants = document.getElementById("box-plants");
     const idBoardSelect = document.getElementById("board-select");
-
+    const idLoading = document.getElementById("loading");
+   
     const removeElementAndDisabled = () => {
       if (idBoxPlants) idBoxPlants.remove();
       if (idBoxNoResults) idBoxNoResults.remove();
+      idLoading.style.display = "none";
 
       valueCardSun.removeAttribute("disabled");
       valueCardWater.removeAttribute("disabled");
@@ -49,8 +51,7 @@ export default () => {
       valueCardSun.value !== "Select..." &&
       valueCardWater.value !== "Select..." &&
       valueCardPets.value !== "Select..."
-    ) {
-      
+    ) {      
       // [V1]  modo 1 de buscar os dados
       valueCardSun.setAttribute("disabled", true); // Desabilitando para não conseguir fazer
       valueCardWater.setAttribute("disabled", true); // varias requisições, antes de ter
@@ -60,30 +61,29 @@ export default () => {
       valueCardWater.classList.remove("hover-select");
       valueCardPets.classList.remove("hover-select");
 
+      idLoading.style.display = "block";
+
       fetch(
         `https://front-br-challenges.web.app/api/v2/green-thumb/?sun=${valueCardSun.value}&water=${valueCardWater.value}&pets=${valueCardPets.value}`
       )
         .then((r) => r.json())
         .then((data) => {
-          removeElementAndDisabled();
-
           const sortFavoriteFirst = data.sort((a, b) => {
             return b.staff_favorite - a.staff_favorite;
-          });
-
+          });          
           document.body.append(BoxPlants(sortFavoriteFirst));
-          scrollToResult();
-         
-        })
-        .catch((e) => {
+
+          scrollToResult();  
           removeElementAndDisabled();
-
+        })
+        .catch((e) => {          
           document.body.append(BoxNoResults());
-
+          
           alert("No plants were found =/");
           console.log("ERROR... ", e);
           
           scrollToResult();
+          removeElementAndDisabled();
         });
 
       // [V2]  modo 2 de buscar os dados

@@ -31,7 +31,7 @@ export default (
   select.classList.add("hover-select");
 
   const firstOption = NewElement("first-option", "Select...", "option");
-  firstOption.setAttribute("id", "option-Select...");
+  firstOption.setAttribute("id", "first-option");
   firstOption.setAttribute("disabled", true);
   firstOption.setAttribute("selected", true);
   firstOption.setAttribute("value", "Select...");
@@ -61,7 +61,6 @@ export default (
 
   const selectInFocus = () => {
     arrowSelect.style.transform = "rotate(180deg)";
-    firstOption.removeAtribute("selected");
   };
 
   select.addEventListener("focus", selectInFocus);

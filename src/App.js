@@ -1,4 +1,5 @@
 import NewElement from "./components/atoms/NewElement";
+import Loading from "./components/atoms/Loading";
 import Header from "./components/organisms/Header/Header";
 import HeaderMobile from "./components/organisms/Header/HeaderMobile";
 // import HeaderJS from "./components/organisms/Header/HeaderJS";
@@ -18,6 +19,7 @@ const App = () => {
   //      [FIM] HEADER
 
   App.append(BoardSelect());
+  App.append(Loading());
   App.append(BoxNoResults());
   
   return App;
