@@ -1,4 +1,5 @@
 import NewElement from "./components/atoms/NewElement";
+import GoToGitHub from "./components/atoms/GoToGitHub";
 import Loading from "./components/atoms/Loading";
 import Header from "./components/organisms/Header/Header";
 import HeaderMobile from "./components/organisms/Header/HeaderMobile";
@@ -19,6 +20,7 @@ const App = () => {
   //      [FIM] HEADER
 
   App.append(BoardSelect());
+  App.append(GoToGitHub());
   App.append(Loading());
   App.append(BoxNoResults());
   

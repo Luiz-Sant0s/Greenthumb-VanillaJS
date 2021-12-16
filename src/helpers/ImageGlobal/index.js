@@ -31,7 +31,10 @@ const ImageGlobal = {
     lowSun: require("/images/icons/low-sun.svg"),
     highSun: require("/images/icons/high-sun.svg"),
     arrowUp: require("/images/icons/arrow-up.svg"),
-    staffFav: require("/images/illustrations/staff-fav.png")    
+    staffFav: require("/images/illustrations/staff-fav.png"),
+
+    // GO TO GITHUB
+    goToGitHub: require("/images/illustrations/go-to-GitHub.png")
 }
 
 export default ImageGlobal
