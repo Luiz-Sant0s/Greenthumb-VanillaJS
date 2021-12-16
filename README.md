@@ -75,6 +75,13 @@ made with **NPM**
 <br/>
 <br/>
 
+<a href="https://parceljs.org/"> <img src="https://parceljs.org/avatar.733335a8.avif" width="100" height="50">
+</a>
+<br/>
+made with **Parcel JS**
+<br/>
+<br/>
+
 [![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)](https://docs.npmjs.com/cli/v7/commands/npm-install)
 <br/>
 muse **SASS** for styling
