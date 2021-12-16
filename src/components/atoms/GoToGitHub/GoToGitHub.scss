@@ -31,13 +31,13 @@
   height: 65px;
   width: 65px;
   position: fixed;
-   bottom: 50px; // top: 10px  ;
-//    top: 10px  ;
+   bottom: 50px; 
   right: 15px;
   cursor: pointer;
   font-style: normal;
   font-weight: bold;
   z-index: 101;
+  box-shadow: rgb(0 0 0 / 23%) 0px 6px 10px 0px;
 }
 
 .btn-github:hover {
