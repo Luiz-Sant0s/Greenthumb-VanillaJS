@@ -1,5 +1,5 @@
 .loading {
-display: none;
+  display: none;
 
   background-image: url("/images/gifs/loading.gif");
   background-position: center;
@@ -13,4 +13,8 @@ display: none;
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.loading:hover {
+  cursor: wait;
 }
