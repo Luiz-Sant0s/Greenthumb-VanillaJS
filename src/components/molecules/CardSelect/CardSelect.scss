@@ -53,14 +53,19 @@
   color: #a8a8a8;
 }
 
-.hover-select:hover {  
-  cursor: pointer;                       
+.hover-select:hover {
+  cursor: pointer;
   opacity: 0.6;
-//   transform: scale(1.1);  SABE LA DEUS O POR QUER ESSE transform QUEBRA TUDO NO NAVEGADOR FIREFOX
 
   border: 2px solid #15573f99;
   color: #15573f99;
   font-weight: bold;
+
+  @media screen and (max-width: 1024px) {
+    border: 1px solid #a8a8a8;
+    color: #a8a8a8;
+    font-weight: 300;
+  }
 }
 
 .first-option:disabled {
@@ -85,4 +90,3 @@
   transition: 0.4s;
   z-index: -1;
 }
-
