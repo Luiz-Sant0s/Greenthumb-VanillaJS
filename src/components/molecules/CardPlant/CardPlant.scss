@@ -71,7 +71,7 @@
   @media screen and (max-width: 1024px) {
     display: block;
     width: 187px;
-    margin: 0;
+    margin: 0 0 15px 0;
   }
 }
 
@@ -172,6 +172,10 @@
 
 #container-staff-favorite-1 {
   top: 31px;
+
+  @media screen and (max-width: 1024px) {
+    top: 15px;
+  }
 }
 
 .staff-favorite {
