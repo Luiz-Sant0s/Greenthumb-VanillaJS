@@ -21,8 +21,7 @@ export default () => {
 
   window.addEventListener("scroll", function () {
     const scroll = this.scrollY;
-
-    console.log(scroll);
+    // console.log(scroll);
 
     if (scroll > 600) {
       btnGitHub.style.removeProperty("bottom");
