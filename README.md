@@ -121,7 +121,6 @@ https://greenthumb-vanillajs.surge.sh/
 <br/>
 
 code link in codesandbox
-https://codesandbox.io/s/sleepy-boyd-boo8c
 
 
 
