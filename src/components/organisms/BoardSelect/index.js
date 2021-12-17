@@ -11,9 +11,9 @@ export default () => {
   const optionsSun = ["no", "low", "high"];
   const optionsWater = ["regularly", "daily", "rarely"];
   const optionsPets = [true, false];
-  
+
   const changeSelect = () => {
-    // console.log("changeSelect >> FUNÇÃO QUE VAI GERENCIAR A MUDANÇA DOS BOX'S TIRANDO O NO RESULT E COLOCANDO O DAS PLANTAS, VIRCE-VERSA.");
+    // console.log("changeSelect >> FUNCTION THAT WILL MANAGE THE CHANGE OF THE BOX'S TAKING THE NO RESULT AND PLACING THE PLANS, VIRCE-VERSA.");
     const valueCardSun = document.getElementById("select-sun");
     const valueCardWater = document.getElementById("select-water");
     const valueCardPets = document.getElementById("select-pets");
@@ -22,7 +22,7 @@ export default () => {
     const idBoxPlants = document.getElementById("box-plants");
     const idBoardSelect = document.getElementById("board-select");
     const idLoading = document.getElementById("loading");
-   
+
     const removeElementAndDisabled = () => {
       if (idBoxPlants) idBoxPlants.remove();
       if (idBoxNoResults) idBoxNoResults.remove();
@@ -35,7 +35,6 @@ export default () => {
       valueCardSun.classList.add("hover-select");
       valueCardWater.classList.add("hover-select");
       valueCardPets.classList.add("hover-select");
-
     };
 
     const scrollToResult = () => {
@@ -47,15 +46,21 @@ export default () => {
       });
     };
 
+    const errorWhenLookingForPlants = () => {
+      document.body.append(BoxNoResults());
+      scrollToResult();
+      removeElementAndDisabled();
+    };
+
     if (
       valueCardSun.value !== "Select..." &&
       valueCardWater.value !== "Select..." &&
       valueCardPets.value !== "Select..."
-    ) {      
-      // [V1]  modo 1 de buscar os dados
-      valueCardSun.setAttribute("disabled", true); // Desabilitando para não conseguir fazer
-      valueCardWater.setAttribute("disabled", true); // varias requisições, antes de ter
-      valueCardPets.setAttribute("disabled", true); // terminado a primeira.
+    ) {
+      // [V1]  mode 1 to fetch the data
+      valueCardSun.setAttribute("disabled", true); // Disabling to not be able to do
+      valueCardWater.setAttribute("disabled", true); // several requests, before having
+      valueCardPets.setAttribute("disabled", true); // finished the first.
 
       valueCardSun.classList.remove("hover-select");
       valueCardWater.classList.remove("hover-select");
@@ -63,30 +68,43 @@ export default () => {
 
       idLoading.style.display = "block";
 
+      const controller = new AbortController();
+      // 5 second timeout: time to tackle the retch
+      const timeoutFetch = setTimeout(() => controller.abort(), 5000);
+
       fetch(
-        `https://front-br-challenges.web.app/api/v2/green-thumb/?sun=${valueCardSun.value}&water=${valueCardWater.value}&pets=${valueCardPets.value}`
+        `https://front-br-challenges.web.app/api/v2/green-thumb/?sun=${valueCardSun.value}&water=${valueCardWater.value}&pets=${valueCardPets.value}`,
+        { signal: controller.signal }
       )
         .then((r) => r.json())
         .then((data) => {
-          const sortFavoriteFirst = data.sort((a, b) => {
-            return b.staff_favorite - a.staff_favorite;
-          });          
-          document.body.append(BoxPlants(sortFavoriteFirst));
+          if (!data.error) {
+            const sortFavoriteFirst = data.sort((a, b) => {
+              return b.staff_favorite - a.staff_favorite;
+            });
 
-          scrollToResult();  
-          removeElementAndDisabled();
+            document.body.append(BoxPlants(sortFavoriteFirst));
+            scrollToResult();
+            removeElementAndDisabled();
+          };
+
+          if (data.error) {
+            errorWhenLookingForPlants();
+
+            alert(`${data.error} =/`);
+            console.log("data.error... ", data.error);
+          };
         })
-        .catch((e) => {          
-          document.body.append(BoxNoResults());
-          
-          alert("No plants were found =/");
-          console.log("ERROR... ", e);
-          
-          scrollToResult();
-          removeElementAndDisabled();
+        .catch((e) => {
+          errorWhenLookingForPlants();
+
+          alert(
+            `Error when trying to connect to server =/                     ${e}`
+          );
+          console.log("ERROR coneect to server... ", e);
         });
 
-      // [V2]  modo 2 de buscar os dados
+      // [V2] mode 1 to fetch the data
       // const request = require("request");
       // request(
       //   `https://front-br-challenges.web.app/api/v2/green-thumb/?sun=${valueCardSun.value}&water=${valueCardWater.value}&pets=${valueCardPets.value}`,
