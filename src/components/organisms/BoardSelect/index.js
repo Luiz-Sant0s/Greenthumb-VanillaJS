@@ -101,7 +101,7 @@ export default () => {
           alert(
             `Error when trying to connect to server =/                     ${e}`
           );
-          console.log("ERROR coneect to server... ", e);
+          console.log("ERROR connect to server... ", e);
         });
 
       // [V2] mode 1 to fetch the data
