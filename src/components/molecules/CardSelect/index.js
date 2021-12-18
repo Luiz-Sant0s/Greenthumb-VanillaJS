@@ -17,9 +17,9 @@ export default (
   const boxSelect = NewElement("box-select", "", "div");
   const iconCard = Img("icon-card-select", icon, `icon ${nameComp}`);
 
-  const TextCardSun = NewElement(`text-card-${nameComp}`, "", "p");
-  TextCardSun.setAttribute("id", `text-card-${nameComp}`);
-  TextCardSun.append(
+  const TextCard = NewElement(`text-card-${nameComp}`, "", "p");
+  TextCard.setAttribute("id", `text-card-${nameComp}`);
+  TextCard.append(
     NewElement("text-bold", `${numberCard}`, "span"),
     `${initDescription}`,
     NewElement("text-bold", `${textBold}`, "span"),
@@ -37,7 +37,18 @@ export default (
   firstOption.setAttribute("value", "Select...");
 
   const theOptions = (valueOption) => {
-    const option = NewElement("options-card", valueOption, "option");
+    const formatDescriptionOption =
+      typeof valueOption !== "boolean"
+        ? valueOption[0].toUpperCase() + valueOption.slice(1).toLowerCase()
+        : valueOption
+        ? "Yes they chew plants"
+        : "No or not chew plants";
+
+    const option = NewElement(
+      "options-card",
+      formatDescriptionOption,
+      "option"
+    );
     option.setAttribute("id", `option-${valueOption}`);
     option.setAttribute("value", valueOption);
 
@@ -69,7 +80,7 @@ export default (
 
   boxSelect.append(select, arrowSelect);
 
-  Card.append(iconCard, TextCardSun, boxSelect);
+  Card.append(iconCard, TextCard, boxSelect);
 
   return Card;
 };
