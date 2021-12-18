@@ -123,7 +123,5 @@ https://greenthumb-vanillajs.surge.sh/
 code link in codesandbox
 https://codesandbox.io/s/happy-wood-n7i7c
 
-Open In New Window  [codesandbox]
-https://n7i7c.csb.app/
 
 
