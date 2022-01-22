@@ -7,7 +7,7 @@ const API_GET_PLANTS = (valueCardSun, valueCardWater, valueCardPets) => {
 
   return fetch(
     `${ENDPOINT}?sun=${valueCardSun}&water=${valueCardWater}&pets=${valueCardPets}`,
-    { signal: controller.signal }
+    {  method: 'get', signal: controller.signal }
   ).then((r) => r.json());
 };
 
