@@ -65,7 +65,7 @@
 <a href="http://vanilla-js.com/"> <img src="https://www.datocms-assets.com/48401/1627659528-vanilla-js.png?fit=max&w=900" width="100" height="50">
 </a>
 <br/>
-made with **Vanilla JS**
+I used **vanillaJS**? Lol or not I just didn't use any **framework**? shahshashahs ==> **MADE IN PURE JAVASCRIPT** :) <==
 <br/>
 <br/>
 
